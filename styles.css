@@ -77,7 +77,23 @@ main {
     background-color: var(--color-2);
 }
 
+#result {
+    margin: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#result .win {
+    color: green;
+}
+
+#result .lose {
+    color: red;
+}
+
 footer {
+    color: var(--color-3);
+    font-size: 0.75rem;
     display: flex;
     justify-content: center;
     align-items: center;
