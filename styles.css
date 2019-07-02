@@ -71,6 +71,7 @@ main {
     border: 2px solid;
     border-radius: 100%;
     border-color: var(--color-3);
+    cursor: crosshair;
 }
 
 #team-selection .team-icon:hover {
@@ -83,11 +84,11 @@ main {
     font-weight: bold;
 }
 
-#result .win {
+#result.win {
     color: green;
 }
 
-#result .lose {
+#result.lose {
     color: red;
 }
 
@@ -97,4 +98,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+a {
+    color: var(--color-3);
 }
