@@ -11,6 +11,21 @@ const result = document.getElementById('result');
 let playerPoints = 0;
 let computerPoints = 0;
 
+let cheat = false;
+const cheatCode = ['r', 'o', 'm', 'j', 's'];
+let cheatCount = 0;
+
+document.addEventListener('keydown', checkCheat);
+function checkCheat(e) {
+    if (e.key === cheatCode[cheatCount]) {
+        cheatCount++;
+        console.log(e.key);
+        if (cheatCount > 3) {
+            cheat = true;
+        }
+    }
+}
+
 rocket.addEventListener('click', () => {
     console.log('rocket clicked');
     game('r');
@@ -40,6 +55,16 @@ function game(playerChoice) {
     console.log('playerChoice: ' + playerChoice);
     let computerChoice = randomChoice();
     console.log('computerChoice: ' + computerChoice);
+
+    if (cheat) {
+        if (playerChoice === 'r') {
+            win(playerChoice, computerChoice);
+            return;
+        } else if (playerChoice === 'o') {
+            lose(playerChoice, computerChoice);
+            return;
+        }
+    }
 
     switch (playerChoice + computerChoice) {
         case 'ro':
